@@ -1,98 +1,163 @@
-/* SIET-Helpdesk custom login theme */
+/* SIET-Helpdesk custom login theme - centered/network variant */
 
-.siet-auth-wrapper {
-    display: flex;
+.siet-page-wrap {
     min-height: 100vh;
     width: 100%;
-}
-
-.siet-auth-left {
-    flex: 1;
-    background-color: #0B3D0B;
-    color: #F5D800;
-    padding: 4rem 3rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    background-color: #F4FAF2;
+    position: relative;
 }
 
-.siet-auth-left h1 {
+.siet-page-wrap::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(11, 61, 11, 0.05) 2px, transparent 2px),
+        radial-gradient(circle at 85% 25%, rgba(11, 61, 11, 0.05) 2px, transparent 2px),
+        radial-gradient(circle at 30% 80%, rgba(11, 61, 11, 0.04) 2px, transparent 2px),
+        radial-gradient(circle at 70% 65%, rgba(11, 61, 11, 0.04) 2px, transparent 2px),
+        radial-gradient(circle at 50% 40%, rgba(11, 61, 11, 0.03) 2px, transparent 2px);
+    background-size: 220px 220px, 260px 260px, 200px 200px, 240px 240px, 300px 300px;
+    pointer-events: none;
+}
+
+.siet-topbar {
+    position: relative;
+    z-index: 1;
+    background-color: #0B3D0B;
     color: #F5D800;
-    font-weight: 800;
-    font-size: 2.4rem;
-    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9rem 2rem;
 }
 
-.siet-auth-left p,
-.siet-auth-left li {
-    color: #F5D800;
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-.siet-auth-left ul {
-    margin-top: 1rem;
-    padding-left: 1.2rem;
-}
-
-.siet-auth-left strong {
+.siet-topbar .siet-brand {
+    font-weight: 700;
+    font-size: 1.15rem;
     color: #ffffff;
+    letter-spacing: 0.01em;
 }
 
-.siet-auth-right {
+.siet-topbar .siet-tagline {
+    margin-left: auto;
+    font-size: 0.8rem;
+    color: #F5D800;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    opacity: 0.9;
+}
+
+.siet-main {
+    position: relative;
+    z-index: 1;
     flex: 1;
-    background-color: #F5D800;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: 2.5rem 1.5rem;
 }
 
-.siet-auth-right .container-tight {
+.siet-login-card {
     width: 100%;
-    max-width: 26rem;
+    max-width: 24rem;
+    background: #E4F7DF;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(11, 61, 11, 0.15);
+    overflow: hidden;
 }
 
-.siet-logo {
-    max-width: 110px;
-    display: block;
-    margin: 0 auto 1rem auto;
-}
-
-.main-content-card {
-    background-color: #E4F7DF !important;
-    border: none !important;
-    border-radius: 16px !important;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-}
-
-.main-content-card .card-header {
+.siet-login-card .card-header {
     background: transparent !important;
     border: none !important;
     text-align: center;
+    padding-top: 0.5rem !important;
 }
 
-.main-content-card .form-control {
-    border-color: #8fd18f !important;
-    border-radius: 8px !important;
+.siet-login-card .card-header h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0B3D0B;
 }
 
-.main-content-card .btn-primary {
+.siet-login-card .card-body {
+    padding: 0.5rem 2rem 2rem 2rem !important;
+}
+
+.siet-login-card .form-label {
+    color: #0B3D0B;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.siet-login-card .form-control {
+    background: #ffffff !important;
+    border: 1.5px solid #a9d9a9 !important;
+    border-radius: 10px !important;
+    padding: 0.65rem 0.9rem !important;
+}
+
+.siet-login-card .form-control:focus {
+    border-color: #4E9B5C !important;
+    box-shadow: 0 0 0 3px rgba(78, 155, 92, 0.18) !important;
+}
+
+.siet-login-card .btn-primary,
+.siet-login-card button[type="submit"].btn-primary {
+    --tblr-btn-color: #ffffff;
+    --tblr-btn-bg: #4E9B5C;
+    --tblr-btn-border-color: #4E9B5C;
+    --tblr-btn-hover-color: #0B3D0B;
+    --tblr-btn-hover-bg: #F5D800;
+    --tblr-btn-hover-border-color: #F5D800;
+    color: #ffffff !important;
     background-color: #4E9B5C !important;
     border-color: #4E9B5C !important;
-    border-radius: 8px !important;
+    border-radius: 12px !important;
+    font-weight: 700;
+    padding: 0.7rem 1rem !important;
 }
 
-.main-content-card .btn-primary:hover {
-    background-color: #3f7e4a !important;
-    border-color: #3f7e4a !important;
+.siet-login-card .btn-primary:hover,
+.siet-login-card button[type="submit"].btn-primary:hover {
+    color: #0B3D0B !important;
+    background-color: #F5D800 !important;
+    border-color: #F5D800 !important;
 }
 
-@media (max-width: 768px) {
-    .siet-auth-wrapper {
-        flex-direction: column;
-    }
-    .siet-auth-left {
-        padding: 2rem 1.5rem;
-    }
+.siet-login-card a {
+    color: #2f7a3c;
+    font-weight: 500;
+}
+
+.siet-logo-wrap {
+    display: flex;
+    justify-content: center;
+    padding-top: 1.75rem;
+}
+
+.siet-logo {
+    width: 92px;
+    height: 92px;
+    object-fit: cover;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 14px rgba(11, 61, 11, 0.2);
+}
+
+.siet-footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #6b8e6b;
+    font-size: 0.8rem;
+    padding-bottom: 1.5rem;
+}
+/* hide login source dropdown - single auth method */
+.siet-login-card div:has(> label[for^="dropdown_auth"]) {
+    display: none !important;
 }

@@ -1,3 +1,34 @@
+{#
+ # ---------------------------------------------------------------------
+ #
+ # GLPI - Gestionnaire Libre de Parc Informatique
+ #
+ # http://glpi-project.org
+ #
+ # @copyright 2015-2026 Teclib' and contributors.
+ # @licence   https://www.gnu.org/licenses/gpl-3.0.html
+ #
+ # ---------------------------------------------------------------------
+ #
+ # LICENSE
+ #
+ # This file is part of GLPI.
+ #
+ # This program is free software: you can redistribute it and/or modify
+ # it under the terms of the GNU General Public License as published by
+ # the Free Software Foundation, either version 3 of the License, or
+ # (at your option) any later version.
+ #
+ # This program is distributed in the hope that it will be useful,
+ # but WITHOUT ANY WARRANTY; without even the implied warranty of
+ # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ # GNU General Public License for more details.
+ #
+ # You should have received a copy of the GNU General Public License
+ # along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ #
+ # ---------------------------------------------------------------------
+ #}
 {% set theme = current_theme() %}
 {% if css_files is not defined %}
    {% set css_files = [
@@ -35,45 +66,35 @@
       <a class="visually-hidden-focusable skip-link" href="#page">{{ __('Go to main content') }}</a>
    </div>
    <main id="page" class="page-anonymous" role="main" tabindex="-1">
-      <div class="siet-auth-wrapper">
-         <div class="siet-auth-left">
-            <h1>Welcome to SIET-Helpdesk</h1>
-            <p>The <strong>Sri Shakthi Institute of Engineering and Technology Helpdesk</strong> is your dedicated platform for reporting and tracking IT issues across campus.</p>
-            <p><strong>SIET-Helpdesk provides</strong></p>
-            <ul>
-               <li>Quick issue reporting by category and location</li>
-               <li>Real-time status tracking on every ticket you raise</li>
-               <li>Fast technician assignment and resolution</li>
-               <li>A simple, no-hassle way to keep campus IT running</li>
-            </ul>
+      <div class="siet-page-wrap">
+         <div class="siet-topbar">
+            <span class="siet-brand">SIET-Helpdesk</span>
+            <span class="siet-tagline">
+               <i class="ti ti-network"></i>
+               Campus IT Service Desk
+            </span>
          </div>
-         <div class="siet-auth-right">
-            <div class="flex-fill d-flex flex-column justify-content-center py-4 mt-4">
-               {% set style = null %}
-               {% if card_md_width is defined %}
-                  {% set style = 'max-width: 40rem' %}
-               {% endif %}
-               {% if card_bg_width is defined %}
-                  {% set style = 'max-width: 60rem' %}
-               {% endif %}
-               <div class="container-tight py-6" {% if style is not null %}style="{{ style }}"{% endif %}>
-                  <div class="text-center">
-                     <div class="col-md">
-                        <img src="/theme-assets/siet-logo.jpg" class="siet-logo" title="SIET-Helpdesk" alt="SIET logo"/>
-                     </div>
-                  </div>
-                  <div class="card card-md main-content-card">
-                     {# Keep the header on one line so that the :empty CSS selector will work #}
-                     <div class="card-header">{% block header_block %}{% endblock %}</div>
-                     <div class="card-body">
-                        {% block content_block %}{% endblock %}
-                     </div>
-                  </div>
-                  <div class="text-center text-muted mt-3">
-                     {% block footer_block %}{% endblock %}
-                  </div>
+         <div class="siet-main">
+            {% set style = null %}
+            {% if card_md_width is defined %}
+               {% set style = 'max-width: 40rem' %}
+            {% endif %}
+            {% if card_bg_width is defined %}
+               {% set style = 'max-width: 60rem' %}
+            {% endif %}
+            <div class="siet-login-card" {% if style is not null %}style="{{ style }}"{% endif %}>
+               <div class="siet-logo-wrap">
+                  <img src="/theme-assets/siet-logo.jpg" class="siet-logo" alt="SIET logo"/>
+               </div>
+               {# Keep the header on one line so that the :empty CSS selector will work #}
+               <div class="card-header">{% block header_block %}{% endblock %}</div>
+               <div class="card-body">
+                  {% block content_block %}{% endblock %}
                </div>
             </div>
+         </div>
+         <div class="siet-footer">
+            {% block footer_block %}{% endblock %}
          </div>
       </div>
    </main>
