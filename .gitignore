@@ -1,0 +1,25 @@
+# GLPI configuration
+config/config_db.php
+
+# Uploaded/generated files
+files/_cache/
+files/_cron/
+files/_dumps/
+files/_log/
+files/_pictures/
+files/_plugins/
+files/_sessions/
+files/_tmp/
+files/_uploads/
+
+# Environment / secrets
+.env
+.env.*
+
+# OS/editor files
+.DS_Store
+*.swp
+*.swo
+
+# Logs
+*.log

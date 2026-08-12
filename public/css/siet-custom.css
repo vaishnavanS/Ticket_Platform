@@ -1,0 +1,98 @@
+/* SIET-Helpdesk custom login theme */
+
+.siet-auth-wrapper {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.siet-auth-left {
+    flex: 1;
+    background-color: #0B3D0B;
+    color: #F5D800;
+    padding: 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.siet-auth-left h1 {
+    color: #F5D800;
+    font-weight: 800;
+    font-size: 2.4rem;
+    margin-bottom: 1.25rem;
+}
+
+.siet-auth-left p,
+.siet-auth-left li {
+    color: #F5D800;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.siet-auth-left ul {
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+}
+
+.siet-auth-left strong {
+    color: #ffffff;
+}
+
+.siet-auth-right {
+    flex: 1;
+    background-color: #F5D800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.siet-auth-right .container-tight {
+    width: 100%;
+    max-width: 26rem;
+}
+
+.siet-logo {
+    max-width: 110px;
+    display: block;
+    margin: 0 auto 1rem auto;
+}
+
+.main-content-card {
+    background-color: #E4F7DF !important;
+    border: none !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.main-content-card .card-header {
+    background: transparent !important;
+    border: none !important;
+    text-align: center;
+}
+
+.main-content-card .form-control {
+    border-color: #8fd18f !important;
+    border-radius: 8px !important;
+}
+
+.main-content-card .btn-primary {
+    background-color: #4E9B5C !important;
+    border-color: #4E9B5C !important;
+    border-radius: 8px !important;
+}
+
+.main-content-card .btn-primary:hover {
+    background-color: #3f7e4a !important;
+    border-color: #3f7e4a !important;
+}
+
+@media (max-width: 768px) {
+    .siet-auth-wrapper {
+        flex-direction: column;
+    }
+    .siet-auth-left {
+        padding: 2rem 1.5rem;
+    }
+}
