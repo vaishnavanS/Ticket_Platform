@@ -1,11 +1,21 @@
 :root[data-glpi-theme="siethelpdesk"] {
+  --tblr-primary: #0B3D0B;
+  --tblr-primary-fg: #ffffff;
   --tblr-primary-rgb: 11, 61, 11;
   --tblr-secondary: #4E9B5C;
   --tblr-secondary-fg: #ffffff;
   --tblr-link-color-rgb: 78, 155, 92;
 
+  --tblr-btn-color: #ffffff;
+  --tblr-btn-primary-color: #ffffff;
+
+  /* Sidebar UI Tabler Variables */
+  --tblr-navbar-color: #ffffff;
+  --tblr-navbar-active-color: #F5D800;
+  --tblr-navbar-hover-color: #ffffff;
+
   --glpi-mainmenu-bg: #0B3D0B;
-  --glpi-mainmenu-fg: #F5D800;
+  --glpi-mainmenu-fg: #ffffff;
 
   --glpi-palette-color-1: #0B3D0B;
   --glpi-palette-color-2: #4E9B5C;
@@ -17,4 +27,57 @@
   --glpi-illustrations-gradient-1: hsl(120deg, 40%, 92%);
   --glpi-illustrations-gradient-2: hsl(120deg, 40%, 72%);
   --glpi-illustrations-gradient-3: hsl(120deg, 40%, 40%);
+}
+
+/* 1. Base sidebar link color (white) */
+.sidebar-nav .nav-link,
+.sidebar-nav .nav-link-title,
+.sidebar-nav .nav-link .nav-link-icon {
+  color: #ffffff !important;
+}
+
+/* 2. Active, focused, hovered, and open accordion states (yellow highlight) */
+.sidebar-nav .nav-link:hover,
+.sidebar-nav .nav-link:focus,
+.sidebar-nav .nav-link.active,
+.sidebar-nav .nav-item.active > .nav-link,
+.sidebar-nav .nav-item.show > .nav-link {
+  color: #F5D800 !important;
+  background-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.sidebar-nav .nav-link:hover .nav-link-icon,
+.sidebar-nav .nav-link.active .nav-link-icon {
+  color: #F5D800 !important;
+}
+
+/* 3. Search button contrast fix */
+button.btn-primary,
+button[type="submit"],
+.btn-primary {
+  color: #ffffff !important;
+  background-color: #0B3D0B !important;
+  border-color: #0B3D0B !important;
+}
+/* Custom SIET Logo targeting .glpi-logo background */
+.glpi-logo {
+    display: inline-block !important;
+    background-image: url('/pics/siet.png') !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: contain !important;
+    width: 200px !important;
+    height: 70px !important;
+    transform: scale(1.4) !important;
+    transform-origin: center center !important;
+}
+
+a.navbar-brand {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: auto !important;
+    min-height: 80px !important;
+    overflow: visible !important;
+    padding: 10px 0 !important;
 }
