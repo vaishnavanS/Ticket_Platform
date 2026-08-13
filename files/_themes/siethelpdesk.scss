@@ -40,14 +40,19 @@
 .sidebar-nav .nav-link:hover,
 .sidebar-nav .nav-link:focus,
 .sidebar-nav .nav-link.active,
+.sidebar-nav .nav-link.show,
+.sidebar-nav .nav-link.dropdown-toggle.active,
+.sidebar-nav .nav-link.dropdown-toggle.show,
 .sidebar-nav .nav-item.active > .nav-link,
 .sidebar-nav .nav-item.show > .nav-link {
   color: #F5D800 !important;
   background-color: rgba(255, 255, 255, 0.12) !important;
 }
 
-.sidebar-nav .nav-link:hover .nav-link-icon,
-.sidebar-nav .nav-link.active .nav-link-icon {
+.sidebar-nav .nav-link.dropdown-toggle.active .nav-link-title,
+.sidebar-nav .nav-link.dropdown-toggle.show .nav-link-title,
+.sidebar-nav .nav-link.dropdown-toggle.active .nav-link-icon,
+.sidebar-nav .nav-link.dropdown-toggle.show .nav-link-icon {
   color: #F5D800 !important;
 }
 
@@ -81,3 +86,7 @@ a.navbar-brand {
     overflow: visible !important;
     padding: 10px 0 !important;
 }
+
+
+
+
