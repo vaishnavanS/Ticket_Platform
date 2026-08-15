@@ -87,6 +87,14 @@ a.navbar-brand {
     padding: 10px 0 !important;
 }
 
+/* Hide the hero search bar on the Helpdesk homepage */
+body.helpdesk .search-bar-container {
+  display: none !important;
+}
 
+/* Hide the redundant Service catalog nav link (only one form exists) */
+li:has(> a.nav-link[href="/ServiceCatalog"]) {
+  display: none !important;
+}
 
 
